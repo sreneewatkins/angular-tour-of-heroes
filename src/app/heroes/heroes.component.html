@@ -1,0 +1,34 @@
+<p>heroes component is working!</p>
+<!-- <h2>{{hero.name | uppercase}} Details</h2>
+<div><span>id: </span>{{hero.id}}</div>
+<div><span>super power: </span>{{hero.superPower}}</div>
+<div><span>damage points: </span>{{hero.damagePoints}}</div>
+<div><span>name: </span>{{hero.name}}</div>
+
+<div>
+    <label>new name:
+        <input [(ngModel)]="hero.name" placeholder="name of hero"/>
+    </label>
+</div> -->
+
+<h2>My Heroes Are:</h2>
+<ul class="heroes">
+    <li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+        <span class="badge">{{hero.id}}</span> 
+         {{hero.name}} | {{hero.superPower}}
+    </li>
+</ul>
+
+<div *ngIf="selectedHero">
+    <h2>{{selectedHero.name | uppercase}} Details</h2>
+    <div><span class="bold">id: </span>{{selectedHero.id}}</div>
+    <div>
+        <label class="bold">new name:
+            <input [(ngModel)]="selectedHero.name" placeholder="name of hero"/>
+        </label>
+    </div>
+    <div><span class="props bold">super power: </span>{{selectedHero.superPower}}</div>
+    <div><span class="props bold">damage points: </span>{{selectedHero.damagePoints}}</div>
+</div>
