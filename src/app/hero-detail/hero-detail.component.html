@@ -1,0 +1,23 @@
+<p>hero-detail component is working!</p>
+
+<div *ngIf="hero">
+    <h2>{{hero.name | uppercase}} Details</h2>
+    <div><span class="bold">id: </span>{{hero.id}}</div>
+    <div>
+        <label class="bold">new name:
+            <input [(ngModel)]="hero.name" placeholder="name of hero"/>
+        </label>
+    </div>
+     <!-- removed the following and the classes I made props and bold -->
+    <div>
+        <span class="props bold">super power: </span>{{hero.superPower}} <br />
+        <input [(ngModel)]="hero.superPower" placeholder="new power"/>
+    </div>
+
+    <div>
+        <span class="props bold">damage points: </span>{{hero.damagePoints}} <br/>
+        <input [(ngModel)]="hero.damagePoints" placeholder="new damage"/>
+    </div>
+    <button (click)="goBack()">go back</button>
+
+</div>

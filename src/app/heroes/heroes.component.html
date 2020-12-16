@@ -12,6 +12,16 @@
 </div> -->
 
 <h2>My Heroes Are:</h2>
+
+<ul class="heroes">
+    <li *ngFor="let hero of heroes">
+        <a routerLink="/detail/{{hero.id}}">
+            <span class="badge">{{hero.id}}</span> {{hero.name}}
+        </a>
+    </li>
+</ul>
+
+<!-- strip the li back and wrap the badge and name in an anchor element and add a routerLink attribute to the anchor that is the same as in the dashboard template
 <ul class="heroes">
     <li *ngFor="let hero of heroes"
     [class.selected]="hero === selectedHero"
@@ -19,9 +29,9 @@
         <span class="badge">{{hero.id}}</span> 
          {{hero.name}} | {{hero.superPower}}
     </li>
-</ul>
+</ul> -->
 
-<div *ngIf="selectedHero">
+<!-- <div *ngIf="selectedHero">   MOVED TO HERO-DETAIL
     <h2>{{selectedHero.name | uppercase}} Details</h2>
     <div><span class="bold">id: </span>{{selectedHero.id}}</div>
     <div>
@@ -31,4 +41,6 @@
     </div>
     <div><span class="props bold">super power: </span>{{selectedHero.superPower}}</div>
     <div><span class="props bold">damage points: </span>{{selectedHero.damagePoints}}</div>
-</div>
+</div> -->
+
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> deleting hero details from HeroesCompoent so we can liberate it-->
